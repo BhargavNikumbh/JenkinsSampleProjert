@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: bhargav
+  labels:
+    app: bhargav
+spec:
+  ports:
+    - port: 8080
+      targetPort: 80
+      nodePort: 31200
+  selector:
+    app: bhargav
+  type: LoadBalancer

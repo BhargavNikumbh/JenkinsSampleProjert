@@ -1,0 +1,20 @@
+kind: Deployment
+apiversion: apps/v1
+metadata:
+  name: bhargav
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: bhargav
+    templates:
+      metadata:
+        labels:
+          app: bhargav
+      spec:
+        containers:
+          - name: bhargav
+            image: bhargavnikumbh99/pipeline-demo
+            imagePullPolicy: Always
+            ports:
+              - containerPort: 80
